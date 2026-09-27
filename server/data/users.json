@@ -1,0 +1,28 @@
+[
+  {
+    "userId": "84739210",
+    "phoneNumber": "+8801712345678",
+    "rawPhone": "01712345678",
+    "hashedPassword": "$2b$10$qoe./eqtEAUJr./KauVvseihU9ZQ8ttTWDCz0zt12gkT4StrxQNCS",
+    "fullName": "Shamim VIP Pro",
+    "username": "vvshamim",
+    "walletBalance": 0.67,
+    "vipLevel": 2,
+    "email": "shamim.pro@hibajee.com",
+    "avatar": "https://images.unsplash.com/photo-1566492031773-4f4e44671857?w=160&auto=format&fit=crop&q=80",
+    "createdAt": "2026-07-20T10:00:00.000Z",
+    "updatedAt": "2026-09-05T09:32:58.404Z"
+  },
+  {
+    "userId": "10593711",
+    "phoneNumber": "+8801876543210",
+    "rawPhone": "01876543210",
+    "hashedPassword": "$2b$10$X540AJav2bQFBdaDdCGoaOInQ3N1.jrpmYt/5wA.E3FEa.HxpU09G",
+    "fullName": "Tamim Iqbal",
+    "username": "player_3711",
+    "walletBalance": 50,
+    "vipLevel": 1,
+    "createdAt": "2026-09-05T07:34:17.395Z",
+    "updatedAt": "2026-09-05T07:34:17.395Z"
+  }
+]

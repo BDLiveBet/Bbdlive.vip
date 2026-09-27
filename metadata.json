@@ -1,0 +1,8 @@
+{
+  "name": "BDLiveBet.vip Online Gaming Remix",
+  "description": "Pixel-perfect clone of the BDLiveBet online gaming and casino mobile web application featuring Bengali UI, live wallet, slots, game providers, and interactive sidebar.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

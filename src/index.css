@@ -1,0 +1,236 @@
+@import "tailwindcss";
+
+@layer base {
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+  body, button, input, select, textarea {
+    font-family: 'Hind Siliguri', 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    letter-spacing: normal;
+  }
+}
+
+:root {
+  --bg-dark: #121921;
+  --card-bg: #1E293B;
+  --gold: #F59E0B;
+  --gold-accent: #EAB308;
+  --text-white: #ffffff;
+  --text-muted: #9CA3AF;
+  --red-banner: #8B0000;
+  --red-banner-dark: #4A0000;
+}
+
+@layer utilities {
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+
+  .text-gold {
+    color: #F59E0B;
+  }
+
+  .bg-card {
+    background-color: #1E293B;
+  }
+
+  .bg-gold-gradient {
+    background: linear-gradient(135deg, #FDE68A 0%, #F59E0B 50%, #D97706 100%);
+  }
+
+  .bg-gold-button {
+    background: linear-gradient(180deg, #FCD34D 0%, #F59E0B 50%, #D97706 100%);
+  }
+
+  .bg-red-banner {
+    background: linear-gradient(135deg, #8B0000 0%, #600000 50%, #4A0000 100%);
+  }
+
+  .wallet-card-gradient {
+    background: linear-gradient(135deg, #a855f7 0%, #06b6d4 100%);
+  }
+
+  .bg-action-red {
+    background-color: #ff1e46;
+  }
+
+  /* 3D Tactile Button Utility Classes */
+  .btn-tactile-gold {
+    background: linear-gradient(180deg, #FDE68A 0%, #F59E0B 45%, #D97706 100%);
+    box-shadow: 0 3px 0 #92400E, 0 4px 10px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+    border: 1px solid rgba(251, 191, 36, 0.7);
+    color: #0F172A;
+  }
+
+  .btn-tactile-red {
+    background: linear-gradient(180deg, #FF4D6D 0%, #E11D48 45%, #9F1239 100%);
+    box-shadow: 0 3px 0 #4C0519, 0 4px 10px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(244, 63, 94, 0.6);
+    color: #FFFFFF;
+  }
+
+  .btn-tactile-dark {
+    background: linear-gradient(180deg, #2A374A 0%, #1E293B 55%, #151D2A 100%);
+    box-shadow: 0 3px 0 #0B111E, 0 4px 8px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(71, 85, 105, 0.6);
+  }
+}
+
+/* ==========================================================================
+   Crisp Multi-Color Border Edge Light & Tactile 3D Press
+   (Zero surface overlay, zero smoke/tint, completely clean button face)
+   ========================================================================== */
+
+/* Universal Button 3D Physics Base */
+button,
+[role="button"],
+input[type="button"],
+input[type="submit"] {
+  position: relative;
+  transition: transform 140ms cubic-bezier(0.34, 1.56, 0.64, 1),
+              box-shadow 140ms ease,
+              border-color 140ms ease;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Subtle idle depth for filled action buttons */
+.btn-tactile-gold,
+.btn-tactile-red,
+.btn-tactile-dark,
+.btn-3d {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+/* 3D Tactile Push: Clean physical press without any surface tint, inner fill, or top overlay */
+button:not(:disabled):active,
+button:not(:disabled).btn-3d-pressed,
+[role="button"]:not([aria-disabled="true"]):active,
+[role="button"]:not([aria-disabled="true"]).btn-3d-pressed,
+input[type="button"]:not(:disabled):active,
+input[type="submit"]:not(:disabled):active {
+  transform: scale(0.96) translateY(1.5px) !important;
+}
+
+/* --- Multi-Color Dynamic Crisp Outer Border Edge Lighting --- */
+
+/* 1. Gold / Yellow Edge Glow (JILI Slots & Default Gold Buttons) */
+.edge-pressed-gold,
+button.edge-pressed-gold,
+[role="button"].edge-pressed-gold,
+button[data-edge="gold"]:active,
+button[data-edge="gold"].btn-3d-pressed,
+button[data-provider="JILI"]:active,
+button[data-provider="JILI"].btn-3d-pressed {
+  border-color: #FBBF24 !important;
+  box-shadow: 0 0 0 1.5px #F59E0B, 0 0 10px 1px rgba(245, 158, 11, 0.65) !important;
+}
+
+/* 2. Cyan Edge Glow (PG Soft, Live Casino & Blue/Support Buttons) */
+.edge-pressed-cyan,
+button.edge-pressed-cyan,
+[role="button"].edge-pressed-cyan,
+button[data-edge="cyan"]:active,
+button[data-edge="cyan"].btn-3d-pressed,
+button[data-provider="PG"]:active,
+button[data-provider="PG"].btn-3d-pressed {
+  border-color: #22D3EE !important;
+  box-shadow: 0 0 0 1.5px #06B6D4, 0 0 10px 1px rgba(6, 182, 212, 0.7) !important;
+}
+
+/* 3. Emerald Green Edge Glow (Deposit, Cashout, Withdraw, Banking) */
+.edge-pressed-emerald,
+button.edge-pressed-emerald,
+[role="button"].edge-pressed-emerald,
+button[data-edge="emerald"]:active,
+button[data-edge="emerald"].btn-3d-pressed,
+button[data-action="deposit"]:active,
+button[data-action="deposit"].btn-3d-pressed,
+button[data-action="withdraw"]:active,
+button[data-action="withdraw"].btn-3d-pressed {
+  border-color: #34D399 !important;
+  box-shadow: 0 0 0 1.5px #10B981, 0 0 10px 1px rgba(16, 185, 129, 0.7) !important;
+}
+
+/* 4. Purple Edge Glow (Promotions, Rewards, VIP, Bonuses) */
+.edge-pressed-purple,
+button.edge-pressed-purple,
+[role="button"].edge-pressed-purple,
+button[data-edge="purple"]:active,
+button[data-edge="purple"].btn-3d-pressed,
+button[data-action="promo"]:active,
+button[data-action="promo"].btn-3d-pressed,
+button[data-action="reward"]:active,
+button[data-action="reward"].btn-3d-pressed {
+  border-color: #C084FC !important;
+  box-shadow: 0 0 0 1.5px #A855F7, 0 0 10px 1px rgba(168, 85, 247, 0.7) !important;
+}
+
+/* Fallback: default crisp gold edge glow if unspecified (excluding bottom-navigation-bar) */
+button:not(:disabled):not(#bottom-navigation-bar button):active:not([class*="edge-pressed-"]):not([data-edge]):not([data-provider]),
+button:not(:disabled):not(#bottom-navigation-bar button).btn-3d-pressed:not([class*="edge-pressed-"]):not([data-edge]):not([data-provider]) {
+  border-color: #FBBF24 !important;
+  box-shadow: 0 0 0 1.5px #F59E0B, 0 0 10px 1px rgba(245, 158, 11, 0.6) !important;
+}
+
+/* Specific styling for bottom navigation bar to prevent any outer ray border overflow */
+#bottom-navigation-bar,
+#bottom-navigation-bar * {
+  -webkit-tap-highlight-color: transparent !important;
+}
+
+#bottom-navigation-bar button {
+  outline: none !important;
+  box-shadow: none !important;
+  -webkit-tap-highlight-color: transparent !important;
+}
+
+#bottom-navigation-bar button:focus,
+#bottom-navigation-bar button:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+  border-color: transparent !important;
+}
+
+#bottom-navigation-bar button:not(#tab-btn-agent):active {
+  box-shadow: none !important;
+  border-color: transparent !important;
+  transform: none !important;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+.animate-marquee {
+  display: inline-block;
+  white-space: nowrap;
+  animation: marquee 24s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.4), 0 0 30px rgba(255, 215, 0, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(255, 215, 0, 0.8), 0 0 45px rgba(255, 215, 0, 0.4);
+  }
+}
+
+.glow-gold {
+  animation: pulse-glow 2.5s infinite;
+}
+
